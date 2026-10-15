@@ -1,0 +1,35 @@
+{
+  "name": "minecraft-search-desktop",
+  "version": "1.0.0",
+  "description": "Minecraft SEARCH Windows App",
+  "private": true,
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "44.7.2",
+    "electron-builder": "26.17.0"
+  },
+  "build": {
+    "appId": "com.nightlowww.minecraftsearch",
+    "productName": "Minecraft SEARCH",
+    "asar": true,
+    "files": [
+      "main.cjs",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "artifactName": "Minecraft-SEARCH-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Minecraft SEARCH"
+    }
+  }
+}
